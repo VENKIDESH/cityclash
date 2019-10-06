@@ -1,0 +1,74 @@
+<swal
+  #addTroop
+  title="Add Troop"
+  html=""
+  preConfirm=""
+  showCancelButton="true"
+  showLoaderOnConfirm="true"
+>
+</swal>
+<swal
+  #deleteTroop
+  title="Are you sure?"
+  text=""
+  preConfirm=""
+  showCancelButton="true"
+  showLoaderOnConfirm="true"
+  type="warning"
+>
+</swal>
+<swal #AlertError title="Oops..." text="" type="error"> </swal>
+<swal #AlertSuccess title="Success!" text="" type="success"> </swal>
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+    <span class="spacer"></span>
+    <button
+      (click)="AddTroop()"
+      mat-raised-button
+      style="background-color: #111f3d"
+    >
+      <mat-icon fontSet="fas" fontIcon="fa-plus"></mat-icon> Add
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div>
+  <div
+    fxLayout="row wrap"
+    fxLayoutGap="10px grid"
+    fxLayoutAlign="space-around start"
+    fxFlexFill
+  >
+    <div *ngFor="let troop of troops; index as i" fxFlex="23">
+      <div fxLayout="column" fxLayoutGap="20px grid">
+        <span></span>
+        <div>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{ troop.name }}</mat-card-title>
+              <mat-card-subtitle>ID: {{ troop.id }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="troop.image" width="200" height="150" />
+            <mat-card-actions>
+              <div fxLayout="row" fxLayoutAlign="space-around center">
+                <button
+                  (click)="viewDetails(i)"
+                  mat-fab
+                  style="background-color: #1fa22e"
+                >
+                  <mat-icon fontSet="fas" fontIcon="fa-list-ol"></mat-icon>
+                </button>
+                <button (click)="AddDetails(i)" mat-fab color="primary">
+                  <mat-icon fontSet="fas" fontIcon="fa-edit"></mat-icon>
+                </button>
+                <button (click)="DeleteTroop(i)" mat-fab color="warn">
+                  <mat-icon fontSet="fas" fontIcon="fa-trash"></mat-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<app-background></app-background>
+<swal
+  #loginSuccess
+  type="success"
+  title="Signed in successfully"
+  [options]="{
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 3000,
+    background: '#000'
+  }"
+></swal>
+<swal #loginError title="Oops..." text="" type="error"> </swal>
+<div fxFill fxLayout="row" fxLayoutAlign="center center">
+  <button
+    class="SignButton"
+    mat-raised-button
+    color="primary"
+    (click)="login()"
+  >
+    Sign In
+  </button>
+</div>
