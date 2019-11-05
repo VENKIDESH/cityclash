@@ -118,3 +118,4 @@ truffle migrate --reset
 //for ropsten network
 truffle migrate --reset --network ropsten
 ```
+//thanks
