@@ -8,7 +8,7 @@ CityClash is blockchain based browser game, we use ethereum network for deployin
 - Build-essential packages
 - [Node.js](https://nodejs.org/)
 - [Docker](https://www.docker.com/)
-- MetaMask Installed Browser
+- MetaMask Added Browser
 
 ## Setting Up:
 
